@@ -1,0 +1,5 @@
+fun pairToList(pair : int * int) : int list = fst pair :: snd pair :: [] : int list
+
+in match pairToList((1,2)) with
+	| [] -> 3
+	| x::xs -> x

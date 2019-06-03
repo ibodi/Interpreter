@@ -1,0 +1,6 @@
+fun plus(ab: int * int) : int = fst ab + snd ab
+fun minus(ab: int * int) : int = fst ab - snd ab
+fun mult(ab: int * int) : int = fst ab * snd ab
+fun divide(ab: int * int) : int = fst ab div snd ab
+
+input a b c d e in minus((mult((divide((plus((a,b)),c)),d)),e))

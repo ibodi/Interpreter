@@ -1,0 +1,11 @@
+fun powH(ab: int * int) : int = 
+	let a = fst ab in
+	let b = snd ab in
+	if b = 0 then 1
+	else a*powH((a,(b-1)))
+fun pow(ab: int * int) : int = 
+	if snd ab < 0 then 1 div 0 else powH(ab)
+
+input x y in pow((x,y))
+
+

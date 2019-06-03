@@ -1,0 +1,9 @@
+fun nth(pair: int * (int list)) : int =
+	match (snd pair) with 
+		| [] -> 1 div 0
+		| y::ys ->
+			let n = (fst pair) in 
+				if n = 0 then y else nth(((n-1), ys))
+
+
+input x in nth((x, [12,4,2,7,23,8,34,1] : int list))

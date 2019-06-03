@@ -1,0 +1,15 @@
+fun take(nXs : int * (int list)) : int list =
+	let n = fst nXs in 
+	let xs = snd nXs in
+	if n = 0 then []: int list
+	else match xs with 
+		| [] -> (1 div 0)::[] : int list
+		| y::ys -> y::(take(((n-1), ys)))
+fun last(xs : int list) : int =
+	match xs with
+		| [] -> 1 div 0
+		| y :: ys -> match ys with
+						| [] -> y
+						| z :: zs -> last(z :: zs)
+
+input x in last(take((x,[1,2,3,4,5,6,7,8,9] : int list)))
