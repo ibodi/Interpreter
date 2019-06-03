@@ -9,8 +9,15 @@ input [list of variables] in [expression that may contain those variables and fu
 ```
 Example program:
 ```
-fun plus(xy : int * int) : int = fst xy + snd xy
-input x y in plus(x, y)
+fun boolToInt(x : bool) : int = if x then 1 else 0
+fun listOdd(xs: int list): bool =
+	match xs with 
+		| [] -> true
+		| y::ys -> odd(y) and listOdd(ys)
+fun odd(x : int) : bool = not (even(x))
+fun even(x : int) : bool = x mod 2 = 0
+
+input a b c d e in boolToInt(listOdd([a,b,c,d,e] : int list))
 ```
 
 In order to run tests you have to install `ghc` and run the following commands in the terminal in the root of the repo:
